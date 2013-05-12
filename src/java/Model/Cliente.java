@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 import java.io.Serializable;
@@ -14,10 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-/**
- *
- * @author Tadeu
- */
 @Entity
 public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -37,8 +29,7 @@ public class Cliente implements Serializable {
     public void setPedido(List<Pedido> pedido) {
         this.pedido = pedido;
     }
-    
-
+  
     public String getNome() {
         return nome;
     }
