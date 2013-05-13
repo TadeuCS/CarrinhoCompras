@@ -19,7 +19,6 @@ public class ClienteEJB {
     public boolean findByLoginSenha(Cliente cliente){
         Query query = em.createQuery("SELECT u from cliente u WHERE u.nome=:nome AND u.senha=:senha");
         query.setParameter("nome", cliente.getNome());
-        query.setParameter("email", cliente.getEmail());
         query.setParameter("senha", cliente.getSenha());
         System.out.println("testando login para cliente="+cliente.getNome()+" e "+cliente.getEmail()+" e "+cliente.getSenha());
         if (query.getResultList().size() ==1){
