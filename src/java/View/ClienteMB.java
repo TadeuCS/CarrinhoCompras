@@ -30,14 +30,11 @@ public class ClienteMB {
     public void salvar(){
         clienteEJB.salvar(cliente);
     }
-    
-    public String logar(){
-        if (clienteEJB.findByLoginSenha(cliente)){
-            return "Produto.xhtml";
-        }else{
-            return "login.xhtml";
-        }
-        
+    public void apagar(){
+       clienteEJB.apagar(cliente); 
+    }
+    public void editar(){
+        clienteEJB.editar(cliente);
     }
     
 }
