@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/CSS/template.css"/>
+    </h:head>
+    <h:body>
+        <div id="barraTitulo">
+
+
+        </div>
+
+        <div id="barraMenu">
+            <h:form>
+                <p:menubar val>
+                    <p:menuitem value=""></p:menuitem>
+                    <p:submenu label="Contatos">
+                        <p:menuitem value="criar novo contato"/>
+                        <p:menuitem value="criar novo contato"/>
+                    </p:submenu >
+
+                    <p:menuitem value="Logar"/>          
+
+                </p:menubar>
+            </h:form>
+        </div>
+
+
+
+        <div id="conteudoPagina">
+            <ui:insert name="conteudoPagina">
+
+            </ui:insert>
+        </div>
+        <div id="rodapePagina">
+            aqui vai o rodapé
+        </div>
+    </h:body>
+</html>
+
+
