@@ -29,7 +29,12 @@ public class ClienteMB {
     
     public void salvar(){
         clienteEJB.salvar(cliente);
-    
+    }
+    public void apagar(){
+       clienteEJB.apagar(cliente); 
+    }
+    public void editar(){
+        clienteEJB.editar(cliente);
     }
     
 }
