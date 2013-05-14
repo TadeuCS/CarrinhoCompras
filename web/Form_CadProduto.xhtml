@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template.xhtml">
+            <ui:define name="corpoPagina">
+                <h:form>
+                    <p:panel id="pnl_cadProduto" style="background: #c4c4c4">
+                        <h:panelGrid columns="2">
+                            <p:outputLabel value="Titulo:" for="txt_titulo"/>
+                            <p:inputText value="#{produtoMB.produto.titulo}" id="txt_titulo"/>
+                            <p:outputLabel value="Descrição" for="txt_descricao"/>
+                            <p:inputText value="#{produtoMB.produto.descricao}" id="txt_descricao"/>
+                            <p:outputLabel value="Preço:" for="txt_preco"/>
+                            <p:inputText value="#{produtoMB.produto.preco}" id="txt_preco"/>
+                            <p:outputLabel value="Nome Imagem:" for="txt_nomeImagem"/>
+                            <p:inputText value="#{produtoMB.produto.nomeImagem}" id="txt_nomeImagem"/>
+                            <p:commandButton value="Salvar" actionListener ="#{produtoMB.salvar()}"/>
+                        </h:panelGrid>
+                    </p:panel>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>
+

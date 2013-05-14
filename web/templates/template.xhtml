@@ -16,29 +16,26 @@
 
         <div id="barraMenu">
             <h:form>
-
-
                 <p:menubar id="traco"/>
-
-                <p:menubar id="menubar">
-                    <p:menuitem value="Produto"/>
-                    <p:menuitem value="Cliente"/>
-                    <p:menuitem value="Pedido"/>
-
+                <p:menubar>
+                    <p:menuitem value="Inicio" outcome="PaginaInicial.xhtml"/>
+                    <p:menuitem value="Produto" outcome="Form_CadProduto.xhtml"/>
+                    <p:menuitem value="Cliente" outcome="Form_CadCliente.xhtml"/>
+                    <p:menuitem value="Pedido" outcome="Form_CadPedido.xhtml"/>
                 </p:menubar>
-
             </h:form>
         </div>
 
 
 
         <div id="conteudoPagina">
-            <ui:insert name="conteudoPagina">
-
+            <ui:insert name="corpoPagina">
+                
             </ui:insert>
         </div>
+        
         <div id="rodapePagina">
-            aqui vai o rodapé
+            aqui vai o rodape
         </div>
     </h:body>
 </html>

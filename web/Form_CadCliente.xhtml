@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template.xhtml">
+            <ui:define name="corpoPagina" >
+                <h:form>
+                    <p:panel id="pnl_cadCliente" style="background: #c4c4c4">
+                        <h:panelGrid columns="2">
+                            <p:outputLabel value="Nome:" for="txt_nome"/>
+                            <p:inputText value="#{clienteMB.cliente.nome}" id="txt_nome"/>
+                            <p:outputLabel value="Email:" for="txt_email"/>
+                            <p:inputText value="#{clienteMB.cliente.email}" id="txt_email"/>
+                            <p:outputLabel value="Senha:" for="txt_senha"/>
+                            <p:password value="#{clienteMB.cliente.senha}" id="txt_senha"/>
+                            <p:commandButton value="Salvar" actionListener="#{clienteMB.salvar()}"/>
+                        </h:panelGrid>
+                    </p:panel>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
