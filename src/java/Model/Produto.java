@@ -31,6 +31,14 @@ public class Produto implements Serializable {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<ItemPedido> itemPedido= new ArrayList<ItemPedido>();
 
+    public List<ItemPedido> getItemPedido() {
+        return itemPedido;
+    }
+
+    public void setItemPedido(List<ItemPedido> itemPedido) {
+        this.itemPedido = itemPedido;
+    }
+
     public String getTitulo() {
         return titulo;
     }
