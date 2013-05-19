@@ -23,6 +23,17 @@ public class ClienteEJB {
         em.remove(cliente);
         em.getTransaction().commit();
     }
+   public boolean findByLoginSenha(Cliente cliente){
+        Query query = em.createQuery("SELECT u from Usuario u WHERE u.nome=:nome AND u.senha=:senha");
+        query.setParameter("nome", cliente.getNome());
+        query.setParameter("senha", cliente.getSenha());
+        System.out.println("testando login para usuario="+cliente.getNome()+" e "+cliente.getSenha());
+        if (query.getResultList().size() ==1){
+            System.out.println("Login existe");
+            return true;
+        }else{
+            return false;
+        }
 
-
+    }
 }

@@ -46,4 +46,12 @@ public class ClienteMB {
         return query3.getResultList();
        
     }
+        public String logar(){
+        if (clienteEJB.findByLoginSenha(cliente)){
+            return "PaginaInicial.xhtml";
+        }else{
+            return "login.xhtml";
+        }
+        
+    }
 }
