@@ -3,22 +3,58 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Cadastro de Pedido</title>
     </h:head>
     <h:body>
         <ui:composition template="/templates/template.xhtml">
             <ui:define name="corpoPagina">
                 <h:form>
-                    <p:panel id="pnl_cadPedido" style="background: #c4c4c4">
+                    <p:panel id="pnl_cadPedido" style="background: #c4c4c4" header="Pedido">
                         <h:panelGrid columns="2">
                             <p:outputLabel value="Data: " for="txt_dataPedido"/>
                             <p:calendar effect="explode" value="#{pedidoMB.pedido.data}" id="txt_dataPedido"/> 
-                            <p:outputLabel value="Item:" for="txt_item"/>
-                            <p:selectOneMenu value="#{pedidoMB.pedido.itemPedido}" id="txt_item" style="width: 230px"/>
+                            <h:outputLabel value="Cliente:"/>
+                            <p:selectOneMenu value="#{pedidoMB.pedido.cliente.id}" style="width: 230px">
+                                <!--<f:selectItems value="#{clienteMB.findAll}" var="cliente" itemLabel="#{cliente.nome}" itemValue="#{cliente.id}"/>-->
+                            </p:selectOneMenu>
                         </h:panelGrid>
                     </p:panel>
+                    <p:panel style="background: #c4c4c4">
+                        <h:outputText value="Produto:  "/>
+                        <p:selectOneMenu  id="txt_item" value="#{pedidoMB.pedido.itemPedido}" style="width:  220px; top: 12px;height: 38px">
+<!--<f:selectItems value="#{produtoMB.findAll}" var="produto" itemLabel="#{produto.descricao}" itemValue="#{produto.id}"/>-->
+                        </p:selectOneMenu>
+                        <p:outputLabel value="Quantidade:" for="txt_qtde"/>
+                        <p:inputText value="" id="txt_qtde"/>
+                        <p:outputLabel value="Valor:" for="txt_valorUn"/>
+                        <p:inputText value="" id="txt_valorUn"/>
+                        <p:commandButton value="Inserir" style=""/>
+                    </p:panel>
+                    <p:dataTable id="tb_produtos" value="#{pedidoMB.pedido.itemPedido}" var="pedido" style="">
+                        <p:column headerText="Codigo">
+                            <h:outputText value="#{pedido.id}"/>
+                        </p:column>
+                        <p:column headerText="Descrição">
+                            <h:outputText value="#{pedido.produto.descricao}"/>
+                        </p:column>
+                        <p:column headerText="Quantidade">
+                            <h:outputText value="#{pedido.quantidade}"/>
+                        </p:column>
+                        <p:column headerText="Valor">
+                            <h:outputText value="#{pedido.precoUnitario}"/>
+                        </p:column>
+                        <p:column headerText="Apagar">
+                            <p:commandButton value="Apagar" actionListener="#{itemPedidoMB.apagar()}"/>
+                        </p:column>
+                    </p:dataTable>
+                    <p/>
+                    <p/>
+                    <h:outputText value="Valor Total: " style="font-size: 20px;font-weight: bold;"/>
+                    <h:outputText value="" style="font-size: 20px;font-weight: bold; color: red"/>
+                    
                 </h:form>
             </ui:define>
         </ui:composition>

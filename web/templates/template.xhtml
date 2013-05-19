@@ -19,8 +19,14 @@
                 <p:menubar id="traco"/>
                 <p:menubar>
                     <p:menuitem value="Inicio" outcome="PaginaInicial.xhtml"/>
-                    <p:menuitem value="Produto" outcome="Form_CadProduto.xhtml"/>
-                    <p:menuitem value="Cliente" outcome="Form_CadCliente.xhtml"/>
+                    <p:submenu label ="Cadastro" >
+                        <p:menuitem value="Cliente" outcome="Form_CadCliente.xhtml"/>
+                        <p:menuitem value="Produto" outcome="Form_CadProduto.xhtml" />
+                    </p:submenu>
+                    <p:submenu label ="Consulta" >
+                        <p:menuitem value="Cliente" outcome="List_Cliente.xhtml"/>
+                        <p:menuitem value="Produto" outcome="List_Produto.xhtml" />
+                    </p:submenu>
                     <p:menuitem value="Pedido" outcome="Form_CadPedido.xhtml"/>
                 </p:menubar>
             </h:form>
@@ -30,10 +36,10 @@
 
         <div id="conteudoPagina">
             <ui:insert name="corpoPagina">
-                
+
             </ui:insert>
         </div>
-        
+
         <div id="rodapePagina">
             aqui vai o rodape
         </div>

@@ -25,20 +25,8 @@ public class ProdutoEJB {
     }
 
     public void apaga(Produto produto) {
-
-        System.out.println("Vou apagar o produto " + produto.getDescricao() + " id=" + produto.getId());
         em.getTransaction().begin();
         em.remove(produto);
         em.getTransaction().commit();
-    }
-
-    public void edita(Produto produto) {
-        em.getTransaction().begin();
-        em.refresh(produto);
-        em.getTransaction().commit();
-    }
-
-    public void findAll() {
-        Query query = em.createQuery("SELECT u from Produto u");
     }
 }

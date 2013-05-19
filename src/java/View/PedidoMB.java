@@ -2,9 +2,11 @@ package View;
 
 import Control.PedidoEJB;
 import Model.Pedido;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -41,11 +43,10 @@ public class PedidoMB {
     public void editar() {
         pedidoEJB.editar(pedido);
     }
-
-    public void findAll() {
-        Query query = em.createQuery("SELECT u from Pedido u");
+    public List<Pedido> findAll(){
+        return pedidoEJB.findAll();
     }
-
+    
     public void calculaTotal() {
         Query query = em.createQuery("SELECT SUM(p.valorTotal) FROM Pedido p where p.id=:codigo");
         query.setParameter("codigo", pedido.getId());

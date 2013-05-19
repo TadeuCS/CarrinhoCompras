@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template.xhtml">
+            <ui:define name="corpoPagina">
+                <h:form>
+                    <h:panelGrid columns="4" cellpadding="5">  
+                        <p:dataTable id="tabela" value="#{produtoMB.findAll()}" var="produto">
+                            <p:column  headerText="ID" >  
+                                <h:outputLabel value="#{produto.id}"/>
+                            </p:column>
+                            <p:column headerText="DESCRIÇÃO" >
+                                <h:outputLabel value="#{produto.descricao}"/>
+                            </p:column>
+                            <p:column headerText="TITULO" >
+                                <h:outputLabel value="#{produto.titulo}"/>
+                            </p:column>
+                            <p:column headerText="PRECO" >
+                                <h:outputLabel value="#{produto.preco}"/>
+                            </p:column>
+                            <p:column headerText="NOME IMAGEM" >
+                                <h:outputLabel value="#{produto.nomeImagem}"/>
+                            </p:column>
+
+                        </p:dataTable>
+                    </h:panelGrid>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -23,6 +24,17 @@ public class ItemPedido implements Serializable {
     private double precoUnitario;
     private int quantidade;
     private double precoTotal;
+    @OneToOne
+    private Produto produto;
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+    
 
     public double getPrecoUnitario() {
         return precoUnitario;

@@ -19,16 +19,7 @@ public class Cliente implements Serializable {
     private String nome;
     private String email;
     private String senha;
-    @OneToMany(cascade = CascadeType.REMOVE)
-    private List<Pedido> pedido = new ArrayList<Pedido>();
 
-    public List<Pedido> getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(List<Pedido> pedido) {
-        this.pedido = pedido;
-    }
   
     public String getNome() {
         return nome;

@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
 /**
@@ -29,6 +30,9 @@ public class Pedido implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date data;
     private double valorTotal;
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    private Cliente cliente;
+    
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<ItemPedido> itemPedido=new ArrayList<ItemPedido>();
 
@@ -40,6 +44,14 @@ public class Pedido implements Serializable {
         this.itemPedido = itemPedido;
     }
 
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
     public Date getData() {
         return data;
