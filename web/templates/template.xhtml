@@ -9,15 +9,15 @@
         <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/CSS/template.css"/>
     </h:head>
     <h:body>
-         <p:menubar id="traco" style="height: 80px;"/>
-        <p:panel header="Web Compras" style="background-color: #c4c4c4;text-align: center; font-size: 25px;"/>
+        <p:menubar id="traco" />
 
+        <p:panel header="Web Compras" style="background-color: #c4c4c4 ;text-align: center; font-size: 25px;height: 55px;"/>
 
         <div id="barraMenu">
             <h:form>
-                <p:menubar id="traco"/>
+                <p:menubar id="traco" style="background-color: black"/>
                 <p:menubar>
-                    <p:menuitem value="Inicio" outcome="PaginaInicial.xhtml"/>
+                    <p:menuitem value="Inicio" outcome="PaginaInicial.xhtml" />
                     <p:submenu label ="Cadastro" >
                         <p:menuitem value="Cliente" outcome="Form_CadCliente.xhtml"/>
                         <p:menuitem value="Produto" outcome="Form_CadProduto.xhtml" />
@@ -40,7 +40,7 @@
         </div>
 
         <div id="rodapePagina">
-            aqui vai o rodape
+            @ copyright Tadeu e Fabiana
         </div>
     </h:body>
 </html>

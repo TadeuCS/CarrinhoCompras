@@ -3,19 +3,22 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
+   <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/CSS/template.css"/>
         <title>Tela de Login</title>
     </h:head>
     <h:body>
+        <p:menubar id="traco"/>
 
-        <p:menubar id="traco" style="height: 100px;"/>
-        <p:panel header="Web Compras" style="background-color: #c4c4c4;text-align: center;">
+        <p:panel header="Web Compras" style="background-color: #c4c4c4;text-align: center;font-size: 25px;height: 55px;"/>
 
-            <h:form>
+        <p:panel style="background-color: #c4c4c4;text-align: center">
+            
+            <h:form style="height: 100%">  
                 Login <p:inputText value="#{clienteMB.cliente.nome}"/>
                 Senha <p:password value="#{clienteMB.cliente.senha}"/>
                 <p:commandButton action="#{clienteMB.logar()}" value="Logar" />
             </h:form>
-              
+            
         </p:panel>
     </h:body>
 </html>
